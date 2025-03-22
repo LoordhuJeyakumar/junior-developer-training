@@ -61,10 +61,10 @@ Make sure to actively participate in the exercises and try out the commands your
 
 **Module 1: Introduction to Version Control and Git**
 
-- [Lesson 1: What is Version Control?](lesson-1-what-is-version-control.md) - Understanding the core concepts and benefits of version control.
-- [Lesson 2: Installing and Setting Up Git](lesson-2-installing-git.md) - Step-by-step guide to installing and configuring Git on your local machine.
-- [Lesson 3: Basic Git Workflow](lesson-3-basic-workflow.md) - Learning the fundamental Git commands for tracking changes: `init`, `add`, `commit`, `status`, `log`.
-- [Lesson 4: Ignoring Files with `.gitignore`](lesson-4-gitignore.md) - Understanding how to use `.gitignore` to prevent unwanted files from being tracked.
+- [Lesson 1: What is Version Control?](./module-1//lesson-1-what-is-version-control.md) - Understanding the core concepts and benefits of version control.
+- [Lesson 2: Installing and Setting Up Git](./module-1/lesson-2-installing-git.md) - Step-by-step guide to installing and configuring Git on your local machine.
+- [Lesson 3: Basic Git Workflow](./module-1//lesson-3-basic-workflow.md) - Learning the fundamental Git commands for tracking changes: `init`, `add`, `commit`, `status`, `log`.
+- [Lesson 4: Ignoring Files with `.gitignore`](./module-1/lesson-4-gitignore.md) - Understanding how to use `.gitignore` to prevent unwanted files from being tracked.
 
 **Module 2: Working with Branches**
 
