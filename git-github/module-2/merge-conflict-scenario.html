@@ -1,0 +1,131 @@
+<div style="font-family: sans-serif; max-width: 800px; margin: 0 auto; padding: 20px;">
+  <h1>Understanding Git Merge Conflicts with Real-World Examples</h1>
+  
+  <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+    <h2>The Recipe Book Analogy</h2>
+    <p>Imagine you're working on a collaborative recipe book:</p>
+    
+    <div style="display: flex; justify-content: space-between; margin: 20px 0;">
+      <div style="width: 30%; background-color: #e6f7ff; padding: 10px; border-radius: 5px;">
+        <h3>Original Recipe</h3>
+        <pre>Chocolate Cake:
+- 2 cups flour
+- 1 cup sugar
+- 1/2 cup cocoa
+- 2 eggs
+- 1 cup milk</pre>
+      </div>
+      
+      <div style="width: 30%; background-color: #f6ffed; padding: 10px; border-radius: 5px;">
+        <h3>Chef Alice's Changes</h3>
+        <pre>Chocolate Cake:
+- 2 cups flour
+- 1 cup sugar
+- 1/2 cup cocoa
+- <mark>3 eggs</mark>
+- 1 cup milk
+- <mark>1/2 cup butter</mark></pre>
+      </div>
+      
+      <div style="width: 30%; background-color: #fff7e6; padding: 10px; border-radius: 5px;">
+        <h3>Chef Bob's Changes</h3>
+        <pre>Chocolate Cake:
+- 2 cups flour
+- 1 cup sugar
+- <mark>1/2 cup dark cocoa</mark>
+- 2 eggs
+- 1 cup milk
+- <mark>1 shot espresso</mark></pre>
+      </div>
+    </div>
+    
+    <div style="background-color: #fff1f0; padding: 10px; border-radius: 5px;">
+      <h3>Merge Conflict!</h3>
+      <pre>Chocolate Cake:
+- 2 cups flour
+- 1 cup sugar
+<<<<<<< HEAD
+- 1/2 cup cocoa
+- 3 eggs
+- 1 cup milk
+- 1/2 cup butter
+=======
+- 1/2 cup dark cocoa
+- 2 eggs
+- 1 cup milk
+- 1 shot espresso
+>>>>>>> feature-bob</pre>
+    </div>
+    
+    <div style="background-color: #d9f7be; padding: 10px; border-radius: 5px; margin-top: 15px;">
+      <h3>Resolved Recipe</h3>
+      <pre>Chocolate Cake:
+- 2 cups flour
+- 1 cup sugar
+- 1/2 cup dark cocoa
+- 3 eggs
+- 1 cup milk
+- 1/2 cup butter
+- 1 shot espresso</pre>
+    </div>
+  </div>
+  
+  <h2>Programming Example: Merge Conflict in Code</h2>
+  
+  <div style="display: flex; justify-content: space-between; margin: 20px 0;">
+    <div style="width: 30%; background-color: #e6f7ff; padding: 10px; border-radius: 5px;">
+      <h3>Original Code</h3>
+      <pre>function greet(name) {
+  // Basic greeting
+  return "Hello, " + name + "!";
+}</pre>
+    </div>
+    
+    <div style="width: 30%; background-color: #f6ffed; padding: 10px; border-radius: 5px;">
+      <h3>Developer A's Changes</h3>
+      <pre>function greet(name) {
+  // Modern JS syntax
+  return `Hello, ${name}!`;
+}</pre>
+    </div>
+    
+    <div style="width: 30%; background-color: #fff7e6; padding: 10px; border-radius: 5px;">
+      <h3>Developer B's Changes</h3>
+      <pre>function greet(name) {
+  // Extra enthusiasm
+  return "Hello, " + name + "!!";
+}</pre>
+    </div>
+  </div>
+  
+  <div style="background-color: #fff1f0; padding: 10px; border-radius: 5px;">
+    <h3>Merge Conflict in Code</h3>
+    <pre>function greet(name) {
+<<<<<<< HEAD
+  // Modern JS syntax
+  return `Hello, ${name}!`;
+=======
+  // Extra enthusiasm
+  return "Hello, " + name + "!!";
+>>>>>>> feature-enthusiasm
+}</pre>
+  </div>
+  
+  <div style="background-color: #d9f7be; padding: 10px; border-radius: 5px; margin-top: 15px;">
+    <h3>Resolved Code</h3>
+    <pre>function greet(name) {
+  // Modern JS syntax with enthusiasm
+  return `Hello, ${name}!!`;
+}</pre>
+  </div>
+  
+  <h2>Steps to Resolve Merge Conflicts</h2>
+  <ol>
+    <li><strong>Identify the conflict</strong> - Use <code>git status</code> to see conflicted files</li>
+    <li><strong>Open the file</strong> - Look for conflict markers (<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>)</li>
+    <li><strong>Edit the file</strong> - Decide which changes to keep or combine them</li>
+    <li><strong>Remove conflict markers</strong> - Delete <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, and <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> lines</li>
+    <li><strong>Stage the changes</strong> - <code>git add &lt;filename&gt;</code></li>
+    <li><strong>Complete the merge</strong> - <code>git commit</code></li>
+  </ol>
+</div>

@@ -1,0 +1,26 @@
+gitGraph
+    commit id: "Initial commit"
+    commit id: "Add basic features"
+    branch feature-login
+    checkout feature-login
+    commit id: "Create login form"
+    commit id: "Add validation"
+    checkout main
+    commit id: "Update documentation"
+    merge feature-login id: "Merge login feature"
+    branch bugfix
+    checkout bugfix
+    commit id: "Fix critical bug"
+    checkout main
+    merge bugfix id: "Apply bugfix"
+    branch feature-profile
+    checkout feature-profile
+    commit id: "Add user profile"
+    commit id: "Add profile picture"
+    checkout main
+    commit id: "Performance improvements"
+    checkout feature-profile
+    merge main id: "Update feature branch"
+    commit id: "Finalize profile feature"
+    checkout main
+    merge feature-profile id: "Add profile feature"
